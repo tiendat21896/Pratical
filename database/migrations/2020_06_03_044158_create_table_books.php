@@ -15,11 +15,13 @@ class CreateTableBooks extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("author_id");
+            $table->unsignedBigInteger("author_id")->default(0);
+            $table->foreign("author_id")->references("id")->on("authors");
             $table->string("title");
             $table->string("ISBN");
-            $table->smallInteger("pub_year");
+            $table->smallInteger("pub_year")->default(0);
             $table->tinyInteger("available");
+            $table->timestamps();
         });
     }
 

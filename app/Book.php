@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
+    protected $table = "books";
+
     public $fillable = [
-        "name",
-        "type",
-        "collation",
-        "attributes",
-        "null",
-        "default",
-        "comments",
-        "extra",
+        "author_id",
+        "title",
+        "ISBN",
+        "pub_year",
+        "available",
+
     ];
 
 }
